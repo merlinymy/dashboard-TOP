@@ -1,25 +1,86 @@
+:root {
+    --logo-font: 'Desporm';
+    --nav-font: 'montserrat-semibold';
+    --nav-font-size: 0.875rem;
+    --heading-font: 'montserrat-extrabold';
+    --heading-font-size: 3rem;
+    --subheading-font: 'merriweather-bold';
+    --subheading-font-size: 1.5rem;
+    --body-text-font: 'merriweather-regular';
+    --body-text-font-size: 1rem;
+    --button-font: 'montserrat-bold';
+    --button-font-size: '1rem';
+}
+
+@font-face {
+    font-family: 'Desporm';
+    src: url(assets/fonts/DESPORM.ttf);
+}
+
+@font-face {
+    font-family: 'montserrat-semibold';
+    src: url(assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'montserrat-extrabold';
+    src: url(assets/fonts/Montserrat/static/Montserrat-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: 'merriweather-bold';
+    src: url(assets/fonts/Merriweather/Merriweather-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'merriweather-regular';
+    src: url(assets/fonts/Merriweather/Merriweather-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url(assets/fonts/Montserrat/static/Montserrat-Bold.ttf);
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    list-style: none;
 }
+
 
 .container {
     display: grid;
-    background-color: rgb(23, 23, 23);
+    background-color: rgb(251, 251, 251);
     border: 3px solid gold;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: auto 0.95fr;
     height: 100vh;
 }
 
 .side-bar {
     border: 2px white solid;
     grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.side-nav {
+    margin-bottom: auto;
+}
+
+.side-nav, .side-nav-others {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    font-family: var(--nav-font);
+    font-size: ;
 }
 
 .right-side {
     display: grid;
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: auto 1fr;
 }
 
 .header {
@@ -28,4 +89,112 @@
 
 .content {
     border: 2px rgb(132, 0, 255) solid;
+}
+
+.logo {
+    display: flex;
+    flex: 0 1 3vh;
+    font-family: var(--logo-font);
+    font-size: 1.25rem;
+    border-bottom: 3px grey solid;
+    padding: 3vh 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo::before {
+    content: "";
+    background: url(assets/pics/icons/brawn-svgrepo-com.svg) no-repeat,
+                url(assets/pics/icons/rainbow-svgrepo-com.svg) no-repeat;
+    background-size: 36px, 64px;
+    background-position: 50%, 50%;
+    height: 36px;
+    width: 36px;
+    margin-right: 1rem;
+}
+
+button.logout {
+    all: unset;
+    border: none;
+    display: flex;
+    align-items: center;
+    /* text-align: start; */
+    padding: 3vh 1.5vw;
+    font-size: var(--nav-font-size);
+
+}
+
+button.logout::before {
+    content: url(assets/pics/icons/logout.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+.logout-button {
+    border-top: 3px solid grey;
+}
+
+ul > li {
+    padding-left: 1.5vw;
+    display: flex;
+    align-items: center;
+}
+
+#overview::before {
+    content: url(assets/pics/icons/dashboard-2-svgrepo-com.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+#workout::before {
+    content: url(assets/pics/icons/gym-weight-svgrepo-com.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+#diet::before {
+    content: url(assets/pics/icons/diet-healthy-organic-svgrepo-com.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+#goals::before {
+    content: url(assets/pics/icons/trophy-svgrepo-com.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+#stats::before {
+    content: url(assets/pics/icons/bar-chart-5-svgrepo-com.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+#settings::before {
+    content: url(assets/pics/icons/setting-svgrepo-com.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+#privacy::before {
+    content: url(assets/pics/icons/privacy-tips-svgrepo-com.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
 }
