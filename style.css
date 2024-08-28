@@ -53,7 +53,6 @@
 .container {
     display: grid;
     background-color: rgb(251, 251, 251);
-    border: 3px solid gold;
     grid-template-columns: auto 0.95fr;
     height: 100vh;
 }
@@ -75,7 +74,7 @@
     flex-direction: column;
     gap: 3vh;
     font-family: var(--nav-font);
-    font-size: ;
+    font-size: var(--nav-font-size);
 }
 
 .right-side {
@@ -84,10 +83,84 @@
 }
 
 .header {
-    border: 2px rgb(255, 0, 0) solid;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+div.profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5%;
+    gap: 3%;
+    padding: 3px;
+    font-size: min(2vw, var(--body-text-font-size));
+}
+form.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input#search-bar {
+    background-image: url(assets/pics/icons/search-alt-1-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: 5px 1px;
+    background-size: 20px 20px;
+    width: 90%;
+    height: 1.5rem;
+    padding-left: 1.75rem;
+    border: 1.5px solid black;
+    border-radius: 10px;
+}
+
+.header-row-1 {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.header-row-2 {
+    padding: 3px 0px;
+    display: grid;
+    grid-row: 2 / 3;
+    grid-template-columns: 60% 40%;
+}
+
+.profile-greeting {
+    display: flex;
+    gap: 2%;
+    margin-left: 5%;
+    align-items: center;
+}
+
+.greeting>p:first-child {
+    font-size: 0.75rem;
+}
+
+.action-btns {
+    display: flex;
+}
+
+.notification-icon {
+    /* display: ; */
+    height: 24px;
+    width: 24px;
+}
+
+.profile-pic {
+    border: 1px solid black;
+    height: 36px;
+    width: 36px;
+    min-width: 36px;
+    border-radius: 50px;
+    background-image: url(assets/pics/photos/steven-universe-profile-pic.jpg);
+    background-size: 36px 36px;
+    background-repeat: no-repeat;
+    background-clip: border-box;
 }
 
 .content {
+    font-family: var(--body-text-font);
+    font-size: var(--body-text-font-size);
     border: 2px rgb(132, 0, 255) solid;
 }
 
@@ -135,6 +208,8 @@ button.logout::before {
 
 .logout-button {
     border-top: 3px solid grey;
+    font-family: var(--button-font);
+    font-size: var(--button-font-size);
 }
 
 ul > li {
