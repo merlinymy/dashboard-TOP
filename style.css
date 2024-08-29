@@ -254,13 +254,50 @@ button.share::before {
     grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-template-rows: repeat(5, 1fr);
     border: 1px solid red;
-    grid-auto-rows: 100px;
+    grid-template-areas: 
+        "st cal weight"
+        "cardi water meas"
+        "tb tb tb"
+        "tb tb tb"
+        "md md md";
     /* grid-auto-flow: column; */
 }
 
 .main>div {
     border: 1px solid green;
     height: 100px;
+}
+
+.strength {
+    grid-area: st;
+}
+
+.cardio {
+    grid-area: cardi;
+}
+
+.calorie {
+    grid-area: cal;
+}
+
+.water {
+    grid-area: water;
+}
+
+.weight {
+    grid-area: weight;
+}
+
+.measurements {
+    grid-area: meas;
+}
+
+.analysis {
+    grid-area: tb;
+}
+
+.medals {
+    grid-area: md;
 }
 
 .content > .side {
