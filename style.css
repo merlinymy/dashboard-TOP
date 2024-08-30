@@ -282,6 +282,7 @@ button.share::before {
     border-radius: 15px;
     padding: 0.75rem 1.15rem;
     font-family: var(--subheading-font);
+    /* font-size: clamp(0.8rem, 90%, 5rem); */
     letter-spacing: 0.15ch;
     color: rgb(255, 255, 255);
 }
@@ -296,7 +297,7 @@ button.share::before {
     width: 50%;
     height: 50%;
     filter: invert(1) brightness(0.95);
-    transform: rotate(0deg) scale(1) translate(100%, 0%);
+    transform: rotate(0deg) scale(1) translate(115%, 15%);
     transition: all 1s;
     display: block; 
 } 
@@ -305,12 +306,12 @@ button.share::before {
     display: block;
     /* margin-left: 0%; */
     /* filter: invert(1) brightness(0.95); */
-    transform: rotate(0deg) scale(2) translate(100%, 0%);
+    transform: rotate(0deg) scale(2) translate(100%,0%);
     transition: all 1s;   
 }
 
 .strength {
-    background-color: rgba(255, 88, 51, 0.85);
+    background-color: rgba(255, 88, 51, 0.8);
     transition: all 1s;
 }
 
@@ -331,7 +332,14 @@ button.share::before {
 
 .cardio {
     grid-area: cardi;
-    background-color: #FF8D33;
+    background-color: rgba(255, 139, 51, 0.8);
+    transition: background-color 1s;
+}
+
+.cardio:hover {
+    transition: background-color 1s;
+    background-color: rgba(255, 139, 51, 1);
+    transition: background-color 1s;
 }
 
 .cardio::after {
@@ -343,8 +351,15 @@ button.share::before {
 }
 
 .calorie {
+    transition: background-color 1s;
     grid-area: cal;
-    background-color: #33FF57;
+    background-color: rgba(51, 255, 88, 0.8);
+}
+
+.calorie:hover {
+    transition: background-color 1s;
+    background-color: rgba(51, 255, 88, 0.8);
+    transition: background-color 1s;
 }
 
 .calorie::after {
