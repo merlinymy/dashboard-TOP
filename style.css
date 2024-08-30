@@ -10,6 +10,7 @@
     --body-text-font-size: 1rem;
     --button-font: 'montserrat-bold';
     --button-font-size: '1rem';
+    --logo-div-height: '3vh'
 }
 
 :root.dark {
@@ -64,6 +65,7 @@
 
 body {
     height: 100vh;
+    background-color: #ffffff;
 }
 
 .container {
@@ -72,6 +74,11 @@ body {
     grid-template-columns: auto 0.95fr;
     grid-template-rows: auto 1fr;
     height: 100%;
+    max-height: calc(100vh - 6vh - 55px);
+}
+.side-bar,.search-form {
+    position: sticky;
+    top: -1px;
 }
 
 .side-bar {
@@ -80,15 +87,19 @@ body {
     grid-row: 2 / 3;
     display: flex;
     flex-direction: column;
-    gap: 30vh;
+    justify-content: flex-start;
+    /* gap: 30vh;       */
+    height: calc(100vh);
+    /* max-height: 100vh - var(--logo-div-height); */
     border-right: 1px solid grey;
     /* justify-content: space-between; */
     /* box-shadow: 3px 0px 5px grey; */
 }
 
 .side-nav {
-    /* margin-bottom: auto; */
+    margin-bottom: auto;
     margin-top: 1.25rem;
+
 }
 
 .side-nav-others {
@@ -98,7 +109,7 @@ body {
 .side-nav, .side-nav-others {
     display: flex;
     flex-direction: column;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     gap: 1rem;
     font-family: var(--nav-font);
     font-size: var(--nav-font-size);
@@ -242,7 +253,6 @@ button.share::before {
     grid-column: 2 / 3;
     font-family: var(--body-text-font);
     font-size: var(--body-text-font-size);
-    padding: 1rem;
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 1rem;
@@ -250,10 +260,13 @@ button.share::before {
 
 .content > .main {
     display: grid;
+    background-color: #2c2c2c;
     grid-column: 1 / 2;
     grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-template-rows: repeat(5, 1fr);
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    gap: 0.75rem;
+    padding: 1.3rem;
     grid-template-areas: 
         "st cal weight"
         "cardi water meas"
@@ -263,34 +276,125 @@ button.share::before {
     /* grid-auto-flow: column; */
 }
 
-.main>div {
-    border: 1px solid green;
-    height: 100px;
+.main>div:nth-child(-n + 6) {
+    /* border: 1px solid green; */
+    /* height: 200px; */
+    border-radius: 15px;
+    padding: 0.75rem 1.15rem;
+    font-family: var(--subheading-font);
+    letter-spacing: 0.15ch;
+    color: rgb(255, 255, 255);
+}
+
+.six-card-animation {
+    grid-area: st;
+    overflow: hidden;
+}
+
+.six-card-animation::after {
+    /* margin-left: 10%; */
+    width: 50%;
+    height: 50%;
+    filter: invert(1) brightness(0.95);
+    transform: rotate(0deg) scale(1) translate(100%, 0%);
+    transition: all 1s;
+    display: block; 
+} 
+
+.six-card-animation:hover::after {
+    display: block;
+    /* margin-left: 0%; */
+    /* filter: invert(1) brightness(0.95); */
+    transform: rotate(0deg) scale(2) translate(100%, 0%);
+    transition: all 1s;   
 }
 
 .strength {
-    grid-area: st;
+    background-color: rgba(255, 88, 51, 0.85);
+    transition: all 1s;
+}
+
+.strength:hover {
+    transition: all 1s;
+    background-color: rgba(255, 88, 51, 1);
+
+}
+
+.strength::after {
+    content: url(assets/pics/icons/dumbbell-svgrepo-com.svg);
+}
+
+.strength:hover::after {
+
+    content: url(assets/pics/icons/dumbbell-svgrepo-com.svg);
 }
 
 .cardio {
     grid-area: cardi;
+    background-color: #FF8D33;
+}
+
+.cardio::after {
+    content: url(assets/pics/icons/activity-heart-svgrepo-com.svg);
+}
+
+.cardio:hover::after {
+    content: url(assets/pics/icons/activity-heart-svgrepo-com.svg);
 }
 
 .calorie {
     grid-area: cal;
+    background-color: #33FF57;
+}
+
+.calorie::after {
+    content: url(assets/pics/icons/diet-healthy-organic-svgrepo-com.svg);
+}
+
+.calorie:hover::after {
+    content: url(assets/pics/icons/diet-healthy-organic-svgrepo-com.svg);
 }
 
 .water {
     grid-area: water;
+    background-color: #33C1FF;
+}
+
+.water::after {
+    content: url(assets/pics/icons/water-drop-svgrepo-com.svg);
+}
+
+.waters:hover::after {
+    content: url(assets/pics/icons/water-drop-svgrepo-com.svg);
 }
 
 .weight {
     grid-area: weight;
+    background-color: #f8ff33;
 }
+
+.weight::after {
+    content: url(assets/pics/icons/weight-svgrepo-com.svg);
+}
+
+.weight:hover::after {
+    content: url(assets/pics/icons/weight-svgrepo-com.svg);
+}
+
 
 .measurements {
     grid-area: meas;
+    background-color: #8D33FF;
 }
+
+.measurements::after {
+    content: url(assets/pics/icons/measure-1-svgrepo-com.svg);
+}
+
+.measurements:hover::after {
+    content: url(assets/pics/icons/measure-1-svgrepo-com.svg);
+}
+
 
 .analysis {
     grid-area: tb;
@@ -300,17 +404,22 @@ button.share::before {
     grid-area: md;
 }
 
-.content > .side {
+.content .side {
     border: 1px solid blue;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-column: 2 / 3;
+}
+
+.content>.side>div {
+    border: 1px solid yellow;
 }
 
 .logo {
     display: flex;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    flex: 0 1 3vh;
+    flex: 0 1 var(--logo-div-height)3vh;
     font-family: var(--logo-font);
     font-size: 1.25rem;
     border-bottom: 3px grey solid;
