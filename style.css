@@ -285,6 +285,8 @@ button.share::before {
     /* font-size: clamp(0.8rem, 90%, 5rem); */
     letter-spacing: 0.15ch;
     color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .six-card-animation {
@@ -308,6 +310,15 @@ button.share::before {
     /* filter: invert(1) brightness(0.95); */
     transform: rotate(0deg) scale(2) translate(100%,0%);
     transition: all 1s;   
+}
+
+.medal-bg {
+    background-image: url(assets/pics/icons/medal-svgrepo-com\ \(1\).svg);
+    background-repeat: no-repeat;
+    background-position: 0vw 1.5vh;
+    background-size: 3.5vw;
+    background-blend-mode:luminosity
+    /* background-size: ; */
 }
 
 .strength {
@@ -408,8 +419,7 @@ button.share::before {
 
 .measurements:hover::after {
     content: url(assets/pics/icons/measure-1-svgrepo-com.svg);
-}
-
+}    
 
 .analysis {
     grid-area: tb;
