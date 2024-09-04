@@ -18,6 +18,9 @@
     --color-card-gb1:rgb(44, 44, 44);
     --box-shadow-hover: 0px 0px 5px rgb(223, 223, 223);
     --color-card-bg2: rgb(74, 74, 74);
+    --color-check-in-squre-bg1: rgb(0, 181, 0);
+    --color-check-in-squre-bg2: rgb(0, 105, 0);
+    --color-check-in-squre-bg3: rgb(0, 45, 0);
 }
 
 :root.dark {
@@ -598,10 +601,6 @@ h4.article-header {
     grid-column: 2 / 3;
 }
 
-.content>.side>div {
-    border: 1px solid yellow;
-}
-
 .logo {
     display: flex;
     grid-column: 1 / 2;
@@ -724,24 +723,118 @@ ul.side-nav > li {
     margin-right: 1rem;
 }
 
+.green-3 {
+    background: var(--color-check-in-squre-bg3);
+}
+
+.green-2 {
+    background: var(--color-check-in-squre-bg2);
+}
+
+.green-1 {
+    background: var(--color-check-in-squre-bg1);
+}
+
+.green-4 {
+    background: var(--color-card-gb1);
+}
+
+.side-wrapper {
+    border-radius: 15px;
+    transition: all 0.75s;
+}
+
+.check-in-col1>.day-cell {
+    color: var(--color-card-bg2);
+}
+
 .side-wrapper>.side {
     background: var(--color-card-gb1);
     position: sticky;
     top: -1px;
     display: flex;
     flex-direction: column;
-    padding: 1.3rem;
+    /* padding: 1.3rem; */
     border-radius: 15px;
-    max-height: 100vh;
+    min-height: 100vh;
+    /* gap: 1.75rem; */
+    /* overflow: auto; */
 }
 
-.upcoming {
-
+.side>div {
+    margin: 1.3rem;
 }
 
-.upcoming-workout, .finished>div {
+.side-wrapper h4 {
+    margin-bottom: 0.65rem;
+}
+
+.finished {
+    flex: 1 0 auto;
+    overflow: hidden;
+}
+
+.check-in-history {
+    position: relative;
+    border: 1px solid rgb(98, 98, 98);
+    border-radius: 15px;
+    background: var(--color-card-bg2);
+    padding: 0rem 0.5rem 0.5rem 0.5rem;
+    /* max-height: 100%; */
+    gap: 0.15rem;
+    height: 68vh;
+    display: flex;    
+    overflow-y: scroll;
+    /* grid-template-columns: repeat(8,minmax(15px, 1fr)); */
+    /* grid-template-rows: repeat((53, 15px)); */
+}
+
+.check-in-col {
+    flex: 0 0 11%;
+    max-width: 11%;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    /* padding-top: 1.25rem; */
+}
+
+.check-in-col>div {
+    margin-bottom: 0.35rem;
+}
+
+.check-in-cell {
+    width: 85%;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+}
+
+.day-cell {
+    position: sticky;
+    border-radius: 0px;
+    padding-top: 0.5rem;
+    top: -1px;
+    text-align: center;
+    background: var(--color-card-bg2);
+    /* padding: 1px; */
+}
+
+.month-cell{
+    /* position: ; */
+    font-size: 1vw;
+}
+
+.check-in-col1 {
+    margin-right: 3px;
+}
+
+.check-in-col1>div {
+    background: var(--color-card-gb2);
+}
+
+.upcoming-workout {
     background: var(--color-card-bg2);
     padding: 1.75rem 0rem;
     text-align: center;
     border-radius: 15px;
 }
+
